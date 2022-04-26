@@ -79,7 +79,7 @@ namespace C_Sharp_Lesson_3_Homework
                         {
                             firstDiagonalSumm = firstDiagonalSumm + matrixOfIntegers[i, j];
                         }
-                        if ((i + j) == (len1 - 1))
+                        else if ((i + j) == (len1 - 1))
                         {
                             secondDiagonalSumm = secondDiagonalSumm + matrixOfIntegers[i, j];
                         }
@@ -98,18 +98,18 @@ namespace C_Sharp_Lesson_3_Homework
              *           * *
              *          * * * 
              */
-            int i, j, count = 1; 
+            int i, j, k, count = 0; 
             count = triangleHight - 1;
-            for (i = 1; i <= triangleHight; i++)
+            for (i = 0; i < triangleHight; i++)
             {
                  
-                for (j = 1; j <= count; j++)
+                for (j = 0; j <count; j++)
                 {
                     Console.Write(" ");
                 }
                 count--;
                 
-                for (j = 1; j <= i ; j++)
+                for (k = 0; k <= i ; k++)
                 {
                     Console.Write("* ");
                 }
@@ -118,9 +118,34 @@ namespace C_Sharp_Lesson_3_Homework
         }
         public void SortList(IList<int> listOfNumbers)
         {
-            //Print to console elements of  listOfNumbers in ascending order
-            //your code here
+            int temp;
+            for (int i = 0; i < listOfNumbers.Count - 1; i++)
+            {
+                for (int j = 0; j < listOfNumbers.Count - i - 1; j++)
+                {
+                    if (listOfNumbers[j] > listOfNumbers[j + 1])
+                    {
+                        temp = listOfNumbers[j + 1];
+                        listOfNumbers[j + 1] = listOfNumbers[j];
+                        listOfNumbers[j] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Sorted list:");
+            foreach (int p in listOfNumbers) { 
+                Console.Write(p + " ");
+            }
+            var newList = listOfNumbers.OrderBy(number => number);
+            Console.WriteLine();
+            Console.WriteLine("Sorted list asc:");
+            foreach (int p in newList)
+            {
+                Console.Write(p + " ");
+            }
         }
+
+
+
         public static void Main(String[] args)
         {
             Homework homework = new Homework();
