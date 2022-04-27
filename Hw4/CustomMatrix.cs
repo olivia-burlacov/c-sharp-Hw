@@ -1,27 +1,44 @@
 ﻿using System;
 
 namespace Hw4
-{
+{   //Defining a class
     class CustomMatrix
     {
-        public static void GetSummOfDiagonalsElements(int[,] matrix)
+    //Fields
+        private int rows;
+        private int col;
+        private int[,] matrix;
+
+    //Constructor
+        public CustomMatrix(int[,] matrix)
         {
-            PrintMatrix(matrix);
-            if (HasMatrixDiagonals(matrix))
+            rows = matrix.GetLength(0);
+            col = matrix.GetLength(1);
+            this.matrix = matrix;
+        }
+
+    //Defining method to print the sum of both diagonals
+        public void GetSummOfDiagonalsElements()
+        {
+            PrintMatrix();
+            if (HasMatrixDiagonals())
             {
-                int sumD1 = SumFirstDiagonal(matrix);
-                int sumD2 = SumSecondDiagonal(matrix);
+                int sumD1 = SumFirstDiagonal();
+                int sumD2 = SumSecondDiagonal();
             }
         }
 
-
-
-
-        public static bool HasMatrixDiagonals(int[,] matrix)
+     //Defining method to switch the matrixes
+        public void setMatrix(int[,] matrix)
         {
+            rows = matrix.GetLength(0);
+            col = matrix.GetLength(1);
+            this.matrix = matrix;
+        }
 
-            int rows = matrix.GetLength(0);
-            int col = matrix.GetLength(1);
+    //Defining method to check if the matrix has diagonals
+        private bool HasMatrixDiagonals()
+        {
             if (rows != col)
             {
                 Console.WriteLine("This matrix doesn't have diagonals");
@@ -33,10 +50,10 @@ namespace Hw4
                 return true;
             }
         }
-        public static int SumFirstDiagonal(int[,] matrix)
+
+    //Defining method to sum the first diagonal
+        private int SumFirstDiagonal()
         {
-            int rows = matrix.GetLength(0);
-            int col = matrix.GetLength(1);
             int firstDiagonalSumm = 0;
             for (var i = 0; i < rows; i++)
             {
@@ -51,10 +68,10 @@ namespace Hw4
             Console.WriteLine("First Diagonal Summ is " + firstDiagonalSumm);
             return firstDiagonalSumm;
         }
-        public static int SumSecondDiagonal(int[,] matrix)
+
+    //Defining method to sum the second diagonal
+        private int SumSecondDiagonal()
         {
-            int rows = matrix.GetLength(0);
-            int col = matrix.GetLength(1);
             int secondDiagonalSumm = 0;
 
             for (var i = 0; i < rows; i++)
@@ -70,23 +87,39 @@ namespace Hw4
             Console.WriteLine("Second Diagonal Summ is " + secondDiagonalSumm);
             return secondDiagonalSumm;
         }
-        public static void PrintMatrix(int[,] matrix)
+
+     //Defining method to print the matrix (as a proper matrix)
+        private void PrintMatrix()
         {
-
-
             Console.WriteLine();
             Console.WriteLine("--------------------------------------------");
-            for (var i=0; i<matrix.GetLength(0); i++)
+            for (var i = 0; i < matrix.GetLength(0); i++)
             {
 
                 Console.WriteLine();
                 for (var j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.Write(matrix[i,j] + " ");
+                    Console.Write(matrix[i, j] + " ");
                 }
             }
 
             Console.WriteLine();
+        }
+
+
+
+
+
+    //Defining a method to sum 2 digits
+        public void AddDigits(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+
+    //Defining same method with different parameters (method OVERLOADING)
+        public void AddDigits(int a, int b, int c)
+        {
+            Console.WriteLine(a + b + c);
         }
     }
 }

@@ -24,9 +24,18 @@ namespace Hw4
                 {100, 56 , -54, 6},
                 {10, 6 , -4, 61} };
 
-            CustomMatrix.GetSummOfDiagonalsElements(matrix);
-            CustomMatrix.GetSummOfDiagonalsElements(matrix2);
-            CustomMatrix.GetSummOfDiagonalsElements(matrix3);
+            //Create a CustomMatrix OBJECT using contructor
+            CustomMatrix customMatrix = new CustomMatrix(matrix);
+            customMatrix.GetSummOfDiagonalsElements();
+            // GetSum method for matrix 2
+            customMatrix.setMatrix(matrix2);
+            customMatrix.GetSummOfDiagonalsElements();
+            // GetSum method for matrix 3
+            customMatrix.setMatrix(matrix3);
+            customMatrix.GetSummOfDiagonalsElements();
+
+            customMatrix.AddDigits(1, 1);
+            customMatrix.AddDigits(1, 1, 1);
 
         }
     }
