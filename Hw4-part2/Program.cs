@@ -38,6 +38,11 @@ namespace Hw4_part2
             worker2.SetAge(26);
             worker2.SetSalary(2000);
 
+            Worker2 worker3 = new Worker2();
+            worker3.SetName("Sam");
+            worker3.SetAge(260);
+            worker3.SetSalary(4000);
+
             Console.WriteLine("Summ of salaries is: " + Sum(worker0.GetSalary(), worker2.GetSalary()));
             Console.WriteLine("Summ of age is: " + Sum(worker0.GetAge(), worker2.GetAge()));
         }
