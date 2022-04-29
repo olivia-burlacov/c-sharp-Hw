@@ -24,7 +24,7 @@ namespace Hw4
                 {100, 56 , -54, 6},
                 {10, 6 , -4, 61} };
 
-            //Create a CustomMatrix OBJECT using contructor
+            //Create a CustomMatrix OBJECT using constructor
             CustomMatrix customMatrix = new CustomMatrix(matrix);
             customMatrix.GetSummOfDiagonalsElements();
             // GetSum method for matrix 2

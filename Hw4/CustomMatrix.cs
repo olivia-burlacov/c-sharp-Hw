@@ -23,8 +23,8 @@ namespace Hw4
             PrintMatrix();
             if (HasMatrixDiagonals())
             {
-                int sumD1 = SumFirstDiagonal();
-                int sumD2 = SumSecondDiagonal();
+               SumFirstDiagonal();
+               SumSecondDiagonal();
             }
         }
 

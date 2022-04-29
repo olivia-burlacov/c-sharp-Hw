@@ -66,7 +66,10 @@ namespace Hw4_part2
         //Age methods
         public void SetAge(int age)
         {
-            if (CheckAge(age) == true) { this.age = age; }
+            if (CheckAge(age)) 
+            { 
+                this.age = age; 
+            }
             else { Console.WriteLine("Age should be between 1 and 100"); }
         }
         public int GetAge()
