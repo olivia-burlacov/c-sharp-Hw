@@ -14,8 +14,5 @@ namespace Hw_5
         {
             habitat = _habitat;
         }
-
-
-    
     }
 }

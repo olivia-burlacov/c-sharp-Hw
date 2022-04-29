@@ -9,15 +9,15 @@ namespace Hw_5
    static class WildAnimalExtension
     {
 
-        public static void MakeNoise(this Wild wildAnimal)
+        public static void MakeNoise(this Animal animal)
         {
-            if (wildAnimal.GetType() == "wolf")
+            if (animal.GetType() == "wolf")
             {
-                Console.WriteLine("what does the " + wildAnimal.GetType() + " say: " + "ARH - WOOOOOOOOOOOOOOOOOOOO");
+                Console.WriteLine("what does the " + animal.GetType() + " say: " + "ARH - WOOOOOOOOOOOOOOOOOOOO");
             }
-            else if (wildAnimal.GetType() == "fox")
+            else if (animal.GetType() == "fox")
             {
-                Console.WriteLine("what does the " + wildAnimal.GetType() + " say: " + "Ring-ding-ding-ding-dingeringeding!");
+                Console.WriteLine("what does the " + animal.GetType() + " say: " + "Ring-ding-ding-ding-dingeringeding!");
             }
         }
     }
