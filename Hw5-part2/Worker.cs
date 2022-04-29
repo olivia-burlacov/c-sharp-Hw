@@ -17,7 +17,7 @@ namespace Hw5_part2
         static void Main(string[] args)
         {
             Worker worker = new Worker("John", 25, 1000);
-            Console.WriteLine("Age is: " + worker.GetAge());
+            Console.WriteLine("Age is: " + worker.GetName());
             Console.WriteLine("Salary is: " + worker.GetSalary());
 
             WorkerInherited worker1 = new WorkerInherited("Ivan", 25, 1000);
@@ -29,9 +29,9 @@ namespace Hw5_part2
 
         }
 
-        public int GetAge()
+        public string GetName()
         {
-            return age;
+            return name;
         }
         public int GetSalary()
         {
