@@ -11,7 +11,12 @@ namespace Hw6
     abstract class User
     {
         protected string name;
-        public abstract void IntroduceSelf();
+
+        public virtual void IntroduceSelf()
+        {
+            Console.WriteLine("Hi! My name is " + name + ".");
+        }
+        public abstract void ContinueIntro();
        
     }
 
@@ -28,9 +33,20 @@ namespace Hw6
 
         public override void IntroduceSelf()
         {
-            Console.WriteLine("Hi! My name is " + name + ". I'm " + age + " years old.");
+            Console.WriteLine("Hello! My name is " + name + ".");
+        }
+        public override void ContinueIntro()
+        {
+            Console.WriteLine( "I'm " + age);
         }
 
+        
+        
+        //Overload
+        public void ContinueIntro(string message)
+        {
+            Console.WriteLine("I'm " + age + message);
+        }
     }
 
     //Derived Teacher class
@@ -45,7 +61,12 @@ namespace Hw6
 
         public override void IntroduceSelf()
         {
-            Console.WriteLine("Hello! My name is " + name + ". I will be your " + subject + " teacher.");
+            Console.WriteLine("Welcome! My name is " + name + ".");
+        }
+
+        public override void ContinueIntro()
+        {
+            Console.WriteLine("I will be your " + subject + " teacher.");
         }
 
     }

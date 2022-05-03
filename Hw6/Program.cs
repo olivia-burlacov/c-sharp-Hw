@@ -16,6 +16,16 @@ namespace Hw6
             foreach (User item in users)
             {
                 item.IntroduceSelf();
+                item.ContinueIntro();
+            }
+
+
+            //Overload implementation
+            Student[] students = { s1, s2 };
+
+            foreach (Student item in students)
+            { 
+                item.ContinueIntro(" years old."); 
             }
         }
     }
